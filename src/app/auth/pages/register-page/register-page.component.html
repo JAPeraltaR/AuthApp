@@ -1,0 +1,86 @@
+<form class="login100-form"
+      autocomplete="off"
+      [formGroup]="myForm"
+      (ngSubmit)="register()">
+
+    <span class="login100-form-title p-b-49">
+        Register
+    </span>
+
+    <div class="flex-row">
+      <div class="wrap-input100 m-b-23">
+        <span class="label-input100">Nombres:</span>
+        <input class="input100"
+               type="email"
+               placeholder="Nombres"
+               formControlName="name">
+        <span class="focus-input100"></span>
+      </div>
+      <div class="wrap-input100 m-b-23">
+        <span class="label-input100">Apellidos:</span>
+        <input class="input100"
+               type="email"
+               placeholder="Apellidos"
+               formControlName="lastName">
+        <span class="focus-input100"></span>
+      </div>
+    </div>
+
+    <div class="wrap-input100 m-b-23">
+        <span class="label-input100">email</span>
+        <input class="input100"
+               type="email"
+               placeholder="Ingrese su correo"
+               formControlName="email">
+        <span class="focus-input100"></span>
+    </div>
+
+    <div class="wrap-input100 m-b-23">
+      <span class="label-input100">Teléfono</span>
+      <input class="input100"
+             type="tel"
+             placeholder="Ingrese su teléfono"
+             formControlName="tel">
+      <span class="focus-input100"></span>
+    </div>
+
+    <div class="wrap-input100 m-b-23">
+      <span class="label-input100">Celular</span>
+      <input class="input100"
+             type="tel"
+             placeholder="Ingrese su celular"
+             formControlName="cel">
+      <span class="focus-input100"></span>
+    </div>
+
+    <div class="wrap-input100 m-b-23">
+      <span class="label-input100">Usuario:</span>
+      <input class="input100"
+             type="tel"
+             placeholder="Nombre de usuario"
+             formControlName="user">
+      <span class="focus-input100"></span>
+    </div>
+
+    <div class="wrap-input100 m-b-23">
+      <span class="label-input100">Contraseña:</span>
+      <input class="input100"
+             type="password"
+             placeholder=" Ingresar su contraseña"
+             formControlName="pass">
+      <span class="focus-input100"></span>
+    </div>
+
+    <div class="text-right p-t-8 p-b-31"></div>
+
+    <div class="container-login100-form-btn">
+        <div class="wrap-login100-form-btn">
+            <div class="login100-form-bgbtn"></div>
+            <button class="login100-form-btn"
+                    [disabled]="myForm.invalid"
+                    type="submit">
+                Create Account
+            </button>
+        </div>
+    </div>
+</form>
