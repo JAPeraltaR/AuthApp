@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { isAuthenticatedGuard } from './auth/guards/is-authenticated.guard';
-import { isNotAuthenticatedGuard } from './auth/guards/is-not-authenticated.guard';
+import { isAuthenticatedGuard, isNotAuthenticatedGuard } from './auth/guards';
 
 const routes: Routes = [
   {
@@ -21,7 +20,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, {useHash: true})],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

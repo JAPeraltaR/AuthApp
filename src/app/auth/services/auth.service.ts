@@ -4,7 +4,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { catchError, map, Observable, of, tap, throwError } from 'rxjs';
 import { User } from '../interfaces/user.interface';
 import { AuthStatus } from '../enum';
-import { CheckTokenResponse, LoginResponse } from '../interfaces';
+import { CheckTokenResponse, LoginResponse, Register } from '../interfaces';
 
 
 @Injectable({
@@ -34,8 +34,18 @@ export class AuthService {
     return true;
   }
 
-  register(){
+  register( registerUser: Register ): Observable<boolean>{
+    const url = `${this.baseUrl}/auth/register`;
+    const body = registerUser;
 
+    return this.http.post<LoginResponse>( url, body )
+      .pipe(
+        map( () => true ),
+        catchError( err => {
+          console.log(err);
+          return throwError( () => 'Esto no es');
+        })
+    )
   }
 
   login( email: string, pass: string ): Observable<boolean> {

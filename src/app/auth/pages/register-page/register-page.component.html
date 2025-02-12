@@ -15,6 +15,9 @@
                placeholder="Nombres"
                formControlName="name">
         <span class="focus-input100"></span>
+        <span *ngIf="isValidField('name')">
+          {{ getMessageError('name') }}
+        </span>
       </div>
       <div class="wrap-input100 m-b-23">
         <span class="label-input100">Apellidos:</span>
@@ -27,16 +30,19 @@
     </div>
 
     <div class="wrap-input100 m-b-23">
-        <span class="label-input100">email</span>
+        <span class="label-input100">Email:</span>
         <input class="input100"
                type="email"
                placeholder="Ingrese su correo"
                formControlName="email">
         <span class="focus-input100"></span>
+        <span *ngIf="isValidField('email')">
+          {{ getMessageError('email') }}
+        </span>
     </div>
 
     <div class="wrap-input100 m-b-23">
-      <span class="label-input100">Teléfono</span>
+      <span class="label-input100">Teléfono:</span>
       <input class="input100"
              type="tel"
              placeholder="Ingrese su teléfono"
@@ -45,7 +51,7 @@
     </div>
 
     <div class="wrap-input100 m-b-23">
-      <span class="label-input100">Celular</span>
+      <span class="label-input100">Celular:</span>
       <input class="input100"
              type="tel"
              placeholder="Ingrese su celular"
@@ -77,7 +83,6 @@
         <div class="wrap-login100-form-btn">
             <div class="login100-form-bgbtn"></div>
             <button class="login100-form-btn"
-                    [disabled]="myForm.invalid"
                     type="submit">
                 Create Account
             </button>
