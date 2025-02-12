@@ -34,6 +34,10 @@ export class AuthService {
     return true;
   }
 
+  register(){
+
+  }
+
   login( email: string, pass: string ): Observable<boolean> {
     const url = `${this.baseUrl}/auth/login`;
     const body = { email, pass };

@@ -1,5 +1,6 @@
 import { Component, inject } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
+import { AuthService } from '../../services/auth.service';
 
 @Component({
   selector: 'auth-register-page',
@@ -9,6 +10,7 @@ import { FormBuilder, Validators } from '@angular/forms';
 })
 export class RegisterPageComponent {
 
+  private authService = inject(AuthService);
   private tf = inject(FormBuilder);
 
   public myForm = this.tf.group({
@@ -22,7 +24,6 @@ export class RegisterPageComponent {
   })
 
   register() {
-    console.log( this.myForm.value );
-
+    this.authService.register();
   }
 }
