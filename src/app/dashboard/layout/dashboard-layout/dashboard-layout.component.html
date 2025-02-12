@@ -4,4 +4,4 @@
 <h3>User</h3>
 <pre>{{ user() | json }}</pre>
 
-<span routerLink="/auth/login">login</span>
+<button routerLink="/auth/login" (click)="onLogOut()">Cerrar Sesion</button>

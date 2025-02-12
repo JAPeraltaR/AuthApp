@@ -12,13 +12,13 @@ export class RegisterPageComponent {
   private tf = inject(FormBuilder);
 
   public myForm = this.tf.group({
-    name: ['', [ Validators.required ]],
+    name:     ['', [ Validators.required ]],
     lastName: ['', [ Validators.required ]],
-    email: ['', [ Validators.required, Validators.email ]],
-    tel: ['', [ Validators.minLength(9) ]],
-    cel: ['', [ Validators.minLength(9) ]],
-    user: ['', [ Validators.required ]],
-    pass: ['', [ Validators.required, Validators.minLength(6) ]]
+    email:    ['', [ Validators.required, Validators.email ]],
+    tel:      ['', [ Validators.minLength(9) ]],
+    cel:      ['', [ Validators.minLength(9) ]],
+    user:     ['', [ Validators.required ]],
+    pass:     ['', [ Validators.required, Validators.minLength(6) ]]
   })
 
   register() {

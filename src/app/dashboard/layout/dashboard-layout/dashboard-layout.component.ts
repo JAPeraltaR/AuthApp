@@ -22,4 +22,8 @@ export class DashboardLayoutComponent {
     console.log(this.user());
     console.log(this.authService.currentUser());
   }
+
+  onLogOut() {
+    this.authService.logOut();
+  }
 }

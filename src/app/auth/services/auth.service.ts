@@ -47,7 +47,11 @@ export class AuthService {
   checkOutStatus(): Observable<boolean> {
     const url = `${this.baseUrl}/auth/check-token`;
     const token = localStorage.getItem('access_token');
-    if(!token) return of(false);
+
+    if(!token) {
+      this.logOut();
+      return of(false);
+    };
 
     const headers = new HttpHeaders()
       .set('Authorization',`Bearer ${ token }`)
@@ -60,5 +64,11 @@ export class AuthService {
           return of(false);
         })
       );
+  }
+
+  logOut() {
+    this._authStatus.set(AuthStatus.notAuthenticated);
+    this._currentUser.set(null);
+    localStorage.removeItem('access_token');
   }
 }
